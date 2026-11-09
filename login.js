@@ -26,7 +26,7 @@ form.addEventListener("submit", event => {
 });
 
 $("#forgotPassword").addEventListener("click", () => {
-  $("#loginFeedback").textContent = "A recuperação de senha estará disponível quando a loja tiver um sistema de contas conectado.";
+  $("#loginFeedback").textContent = "recurso não disponível,tente novamente mais tarde.";
 });
 
 $("#createAccount").addEventListener("click", event => {
