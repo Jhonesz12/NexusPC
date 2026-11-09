@@ -1,124 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS PC</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nexus PC — peças, periféricos e suporte especializado para montar seu setup.">
+  <title>Nexus PC | Monte o setup que pensa grande</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <header class="header">
+    <a class="brand" href="#inicio" aria-label="Nexus PC início">NEXUS <span>PC</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="nav" id="mainNav">
+      <a href="#inicio">Início</a><a href="#loja">Loja</a><a href="#estoque">Estoque</a>
+      <a href="#atendimento">Atendimento</a><a href="#sugestoes">Sugestões</a>
+    </nav>
+    <button class="cart-link" id="headerCart">Carrinho <span id="cartCount">0</span></button>
+  </header>
 
+  <main>
+    <section class="hero section" id="inicio">
+      <div class="hero-copy">
+        <span class="eyebrow">NEXUS PC · PERFORMANCE SOB MEDIDA</span>
+        <h1>Monte o Setup<br>que pensa <span>grande.</span></h1>
+        <p>Peças, periféricos e suporte especializado para transformar sua ideia em performance.</p>
+        <a class="btn" href="#loja">Explorar a loja <span>↗</span></a>
+      </div>
+      <div class="hero-image" role="img" aria-label="Setup gamer com computador iluminado"></div>
+    </section>
 
-    <header class="navbar">
+    <section class="section" id="loja">
+      <div class="section-heading">
+        <div><span class="eyebrow">ESCOLHA SEU PRÓXIMO UPGRADE</span><h2>Loja / catálogo</h2><p>Encontre os componentes certos para o seu setup.</p></div>
+        <div class="search-wrap"><input id="searchInput" type="search" placeholder="Pesquisar produtos..." aria-label="Pesquisar produtos"><span>⌕</span></div>
+      </div>
+      <div class="toolbar"><span id="resultCount">4 produtos disponíveis</span><select id="categoryFilter" aria-label="Filtrar por categoria"><option value="all">Filtrar por categoria</option><option value="Placas de vídeo">Placas de vídeo</option><option value="Processadores">Processadores</option><option value="Placas-mãe">Placas-mãe</option><option value="Memória e armazenamento">Memória e armazenamento</option></select></div>
+      <div class="product-grid" id="productGrid">
+        <article class="product-card" data-category="Placas de vídeo" data-name="GPU Performance X">
+          <div class="product-visual gpu"><span class="tag">MAIS VENDIDO</span><img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=900&q=85" alt="Placa de vídeo para computador"></div>
+          <div class="product-info"><small>PLACAS DE VÍDEO</small><h3>GPU Performance X</h3><p>Potência gráfica para jogos, criação e multitarefa.</p><strong>R$ 2.899</strong><button class="outline add-cart" data-id="gpu">Adicionar ao carrinho</button><a class="text-link" href="#produto-gpu">Ver detalhes ↗</a></div>
+        </article>
+        <article class="product-card" data-category="Processadores" data-name="CPU Core Boost 7">
+          <div class="product-visual cpu"><img src="https://images.unsplash.com/photo-1555617981-dac3880eac6e?auto=format&fit=crop&w=900&q=85" alt="Processador de computador"></div>
+          <div class="product-info"><small>PROCESSADORES</small><h3>CPU Core Boost 7</h3><p>Desempenho consistente para games e produtividade.</p><strong>R$ 1.599</strong><button class="outline add-cart" data-id="cpu">Adicionar ao carrinho</button><a class="text-link" href="#compatibilidade">Ver detalhes ↗</a></div>
+        </article>
+        <article class="product-card" data-category="Placas-mãe" data-name="Placa-mãe Nexus Pro">
+          <div class="product-visual board"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=85" alt="Placa eletrônica e componentes"></div>
+          <div class="product-info"><small>PLACAS-MÃE</small><h3>Placa-mãe Nexus Pro</h3><p>Conectividade e estabilidade para sua montagem.</p><strong>R$ 899</strong><button class="outline add-cart" data-id="board">Adicionar ao carrinho</button><a class="text-link" href="#compatibilidade">Ver detalhes ↗</a></div>
+        </article>
+        <article class="product-card" data-category="Memória e armazenamento" data-name="Kit Essential">
+          <div class="product-visual ram"><img src="https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&w=900&q=85" alt="Memória e componentes de computador"></div>
+          <div class="product-info"><small>MEMÓRIA E ARMAZENAMENTO</small><h3>Kit Essential</h3><p>Memória rápida e armazenamento para seu dia a dia.</p><strong>R$ 699</strong><button class="outline add-cart" data-id="ram">Adicionar ao carrinho</button><a class="text-link" href="#memoria">Ver detalhes ↗</a></div>
+        </article>
+      </div>
+      <p class="empty-state hidden" id="emptyState">Nenhum produto encontrado. Tente outra pesquisa.</p>
+    </section>
 
-        <div class="logo">
-            <span>NEXUS</span>
-            <b>PC</b>
-        </div>
+    <section class="section feature-section" id="produto-gpu">
+      <div class="feature-image"><img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1100&q=85" alt="Placa de vídeo"></div>
+      <div class="feature-copy"><span class="eyebrow">DESTAQUE DA LOJA</span><h2>GPU Performance X</h2><p>Potência gráfica para jogos, criação e multitarefa. Um componente pensado para quem quer ir além e construir uma experiência fluida.</p>
+        <div class="spec-grid"><div><b>4K+</b><small>Experiência visual</small></div><div><b>DLSS 3</b><small>Tecnologia gráfica</small></div><div><b>12 GB</b><small>Memória de vídeo</small></div><div><b>3 anos</b><small>Garantia ilustrativa</small></div></div>
+        <button class="btn add-cart" data-id="gpu">Adicionar ao carrinho — R$ 2.899</button></div>
+    </section>
 
-        <nav>
-            <a href="#">Início</a>
-            <a href="#">Loja</a>
-            <a href="#">Estoque</a>
-            <a href="#">Atendimento</a>
-            <a href="#">Sugestões</a>
-        </nav>
+    <section class="section" id="compatibilidade">
+      <div class="section-heading"><div><span class="eyebrow">MONTE COM SEGURANÇA</span><h2>Processadores & compatibilidade</h2><p>Compare as opções antes de escolher os componentes.</p></div></div>
+      <div class="compat-layout">
+        <article class="mini-feature"><img src="https://images.unsplash.com/photo-1555617981-dac3880eac6e?auto=format&fit=crop&w=900&q=85" alt="Processador"><small>PROCESSADORES</small><h3>CPU Core Boost 7</h3><p>Performance equilibrada para jogos, estudos e tarefas exigentes.</p><strong>R$ 1.599</strong></article>
+        <div class="table-wrap"><table><thead><tr><th>Modelo</th><th>Uso indicado</th><th>Perfil</th></tr></thead><tbody><tr><td>Core Boost 5</td><td>Estudos / escritório</td><td><span class="status">Entrada</span></td></tr><tr><td>Core Boost 7</td><td>Criação / streaming</td><td><span class="status">Avançado</span></td></tr><tr><td>Core Boost 9</td><td>Render / multitarefa</td><td><span class="status">Premium</span></td></tr></tbody></table><p class="note">Confira sempre o soquete e a compatibilidade da placa-mãe antes da compra.</p></div>
+      </div>
+    </section>
 
-        <button class="cart">
-            Carrinho (0)
-        </button>
+    <section class="section memory-section" id="memoria">
+      <div class="section-heading"><div><span class="eyebrow">MAIS VELOCIDADE NO DIA A DIA</span><h2>Memória & armazenamento</h2><p>Mais espaço e agilidade para seus projetos e jogos.</p></div></div>
+      <div class="memory-grid"><article class="stat-card"><span class="metric">7.5 <small>GB/s</small></span><h3>SSD NVMe M.2</h3><p>Inicialização rápida, carregamentos menores e espaço para seus arquivos.</p><strong>R$ 449</strong><button class="outline add-cart" data-id="ssd">Adicionar</button></article><article class="stat-card purple"><span class="metric">6000 <small>MHz</small></span><h3>Memória DDR5</h3><p>Memória de alta velocidade para uma experiência mais responsiva.</p><strong>R$ 699</strong><button class="outline add-cart" data-id="ram">Adicionar</button></article></div>
+    </section>
 
-    </header>
+    <section class="section" id="estoque">
+      <div class="section-heading"><div><span class="eyebrow">DISPONIBILIDADE</span><h2>Estoque em tempo real</h2><p>Consulte a disponibilidade dos itens do catálogo.</p></div><span class="live"><i></i> Atualizado agora</span></div>
+      <div class="table-wrap"><table class="stock-table"><thead><tr><th>Produto</th><th>Categoria</th><th>Disponibilidade</th><th>Ação</th></tr></thead><tbody id="stockBody"><tr><td>GPU Performance X</td><td>Placas de vídeo</td><td><span class="status">Em estoque</span></td><td><button class="table-add add-cart" data-id="gpu">Reservar</button></td></tr><tr><td>CPU Core Boost 7</td><td>Processadores</td><td><span class="status">Em estoque</span></td><td><button class="table-add add-cart" data-id="cpu">Reservar</button></td></tr><tr><td>Placa-mãe Nexus Pro</td><td>Placas-mãe</td><td><span class="status low">Poucas unidades</span></td><td><button class="table-add add-cart" data-id="board">Reservar</button></td></tr><tr><td>Kit Essential</td><td>Memória</td><td><span class="status">Em estoque</span></td><td><button class="table-add add-cart" data-id="ram">Reservar</button></td></tr></tbody></table></div>
+      <p class="note">* Estoque demonstrativo para o projeto. Consulte a loja para confirmar disponibilidade e valores.</p>
+    </section>
 
+    <section class="section support-section" id="atendimento">
+      <div class="support-intro"><span class="eyebrow">ESTAMOS AQUI PARA AJUDAR</span><h2>Atendimento que<br><span>entende.</span></h2><p>Do primeiro upgrade ao pc ideal, você fala com quem conhece de verdade.</p></div>
+      <div class="service-grid"><article><b>01</b><h3>Chat especializado</h3><p>Tire dúvidas com orientação sobre peças e compatibilidade.</p></article><article><b>02</b><h3>Orçamento sob medida</h3><p>Uma configuração pensada para seu objetivo e orçamento.</p></article><article><b>03</b><h3>Suporte técnico</h3><p>Ajuda para escolher, montar e configurar seu equipamento.</p></article><article><b>04</b><h3>Trocas e garantia</h3><p>Orientação sobre atendimento, trocas e garantia.</p></article></div>
+    </section>
 
+    <section class="section suggestion-section" id="sugestoes">
+      <div><span class="eyebrow">SUA IDEIA PODE VIRAR SETUP</span><h2>Tem uma ideia?<br><span>Vamos montar.</span></h2><p>Não encontrou o que procura? Envie sua sugestão. A equipe Nexus PC pode ajudar a encontrar uma solução.</p></div>
+      <form class="suggestion-form" id="suggestionForm"><label for="name">Seu nome</label><input id="name" name="name" placeholder="Como podemos te chamar?" required><label for="email">E-mail para contato</label><input id="email" name="email" type="email" placeholder="seuemail@exemplo.com" required><label for="idea">O que você gostaria de encontrar?</label><textarea id="idea" name="idea" rows="4" placeholder="Conte um pouco sobre sua ideia..." required></textarea><button class="btn" type="submit">Enviar sugestão ↗</button><p class="form-feedback" id="formFeedback" aria-live="polite"></p></form>
+    </section>
 
-    <main class="hero">
+    <section class="section process-section">
+      <div class="center-heading"><span class="eyebrow">DO PLANO À PERFORMANCE</span><h2>Monte sem medo</h2><p>Uma jornada simples para tirar seu projeto do papel.</p></div>
+      <div class="process-grid"><article><b>01</b><h3>Escolha</h3><p>Defina seu objetivo, preferências e componentes para começar.</p><a href="#loja">Explorar produtos ↗</a></article><article><b>02</b><h3>Montagem</h3><p>Combine as peças certas com orientação e atenção à compatibilidade.</p><a href="#atendimento">Falar com especialista ↗</a></article><article><b>03</b><h3>Entrega</h3><p>Prepare seu setup para aproveitar sua experiência ao máximo.</p><a href="#sugestoes">Enviar uma ideia ↗</a></article></div>
+    </section>
 
+    <section class="section cart-section" id="carrinho">
+      <div class="section-heading"><div><span class="eyebrow">SEUS COMPONENTES</span><h2>Seu carrinho</h2><p>Revise os itens selecionados antes de continuar.</p></div></div>
+      <div class="cart-layout"><div class="cart-items" id="cartItems"><p class="empty-cart">Seu carrinho está vazio. Explore a loja para adicionar produtos.</p></div><aside class="cart-summary"><h3>Resumo do pedido</h3><div><span>Subtotal</span><b id="subtotal">R$ 0,00</b></div><div><span>Frete</span><b>A calcular</b></div><hr><div class="total"><span>Total</span><strong id="total">R$ 0,00</strong></div><button class="btn" id="checkoutBtn">Finalizar compra ↗</button><small>Projeto demonstrativo: nenhuma cobrança será realizada.</small></aside></div>
+    </section>
+  </main>
 
-        <section class="hero-text">
-
-            <p class="small-title">
-                HARDWARE SEM LIMITES
-            </p>
-
-            <h1>
-                Monte o Setup<br>
-                que <span>pensa<br>grande</span>
-            </h1>
-
-            <p class="description">
-                Peças, periféricos e suporte especializado para
-                transformar sua ideia em performance.
-            </p>
-
-            <a href="#" class="shop-button">
-                Explorar a loja →
-            </a>
-
-        </section>
-
-
-     
-        <section class="hero-image">
-
-            <img src="setup-rgb-2-1.jpg" alt="Setup gamer">
-
-        </section>
-
-    <footer class="footer">
-
-        <div class="footer-contact">
-
-            <div class="contact-item">
-                <div class="contact-icon whatsapp">☏</div>
-                <span>(38) 99751-3319</span>
-            </div>
-
-            <div class="contact-item">
-                <div class="contact-icon instagram">◎</div>
-                <span>@NexusPC</span>
-            </div>
-
-            <div class="contact-item">
-                <div class="contact-icon email">@</div>
-                <span>nexuspcloja@gmail.com</span>
-            </div>
-
-        </div>
-
-
-        <div class="footer-menu">
-
-            <h3>Explorar</h3>
-
-            <a href="#">Início</a>
-            <a href="#">Loja</a>
-            <a href="#">Estoque</a>
-            <a href="#">Atendimento/Suporte</a>
-            <a href="#">Sugestões</a>
-
-        </div>
-
-
-        <div class="footer-brand">
-
-            <div class="footer-logo">
-                NEXUS <span>PC</span>
-            </div>
-
-            <h2>
-                Monte o setup que<br>
-                <span>pensa grande</span>
-            </h2>
-
-        </div>
-
-    </footer>
-
-</body>
-</html>
-    </main>
-
+  <footer class="footer"><div class="footer-contact"><a href="https://wa.me/5538997513319" target="_blank" rel="noopener">◉ <span>(38) 99751-3319</span></a><a href="https://instagram.com/NexusPC" target="_blank" rel="noopener">◎ <span>@NexusPC</span></a><a href="mailto:nexuspcloja@gmail.com">✉ <span>nexuspcloja@gmail.com</span></a></div><div><h3>Explorar</h3><a href="#inicio">Início</a><a href="#loja">Loja</a><a href="#estoque">Estoque</a><a href="#atendimento">Atendimento/Suporte</a><a href="#sugestoes">Sugestões</a></div><div class="footer-brand"><b>NEXUS <span>PC</span></b><p>Monte o setup que<br><em>pensa grande.</em></p></div><p class="copyright">© 2026 Nexus PC. Projeto demonstrativo.</p></footer>
+  <script src="script.js"></script>
 </body>
 </html>
