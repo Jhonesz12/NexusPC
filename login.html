@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Entre na sua conta Nexus PC.">
+  <title>Entrar | Nexus PC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+  <aside class="auth-side">
+    <a class="auth-brand" href="index.html">NEXUS <span>PC</span></a>
+    <div class="auth-message">
+      <span class="eyebrow">SUA EXPERIÊNCIA COMEÇA AQUI</span>
+      <h1>Seu setup.<br>Sua conta.<br><span>Seu universo.</span></h1>
+      <p>Acesse sua área Nexus PC e acompanhe sua experiência em um só lugar.</p>
+    </div>
+    <small>© 2026 Nexus PC · Monte o setup que pensa grande.</small>
+  </aside>
+  <main class="auth-main">
+    <section class="auth-card">
+      <h2>Bem-vindo de volta</h2>
+      <p class="auth-subtitle">Entre com seus dados para continuar.</p>
+      <form class="auth-form" id="loginForm">
+        <label for="loginEmail">E-mail</label>
+        <input id="loginEmail" name="email" type="email" placeholder="seuemail@exemplo.com" autocomplete="email" required>
+        <label for="loginPassword">Senha</label>
+        <div class="password-wrap"><input id="loginPassword" name="password" type="password" placeholder="Digite sua senha" autocomplete="current-password" minlength="4" required><button class="show-password" type="button" id="togglePassword">Mostrar</button></div>
+        <div class="auth-options"><label class="remember"><input type="checkbox" id="rememberMe"> Manter conectado</label><button type="button" id="forgotPassword">Esqueci minha senha</button></div>
+        <button class="btn auth-submit" type="submit">Entrar na conta ↗</button>
+        <p class="auth-feedback" id="loginFeedback" role="status" aria-live="polite"></p>
+      </form>
+      <p class="auth-switch">Ainda não tem uma conta? <a href="#" id="createAccount">Criar conta</a></p>
+      <a class="back-home" href="index.html">← Voltar para a loja</a>
+      <p class="auth-demo-note">Demonstração visual: este formulário não valida usuários em um servidor nem realiza autenticação real. Não utilize senhas pessoais. Para uma loja publicada, conecte um serviço de autenticação seguro.</p>
+    </section>
+  </main>
+  <script src="login.js"></script>
+</body>
+</html>
