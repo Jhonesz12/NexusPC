@@ -31,5 +31,5 @@ $("#forgotPassword").addEventListener("click", () => {
 
 $("#createAccount").addEventListener("click", event => {
   event.preventDefault();
-  $("#loginFeedback").textContent = "O cadastro de contas precisa ser conectado a um serviço seguro para funcionar.";
+  $("#loginFeedback").textContent = "Orçamento acabou :P,recarregue seus créditos para fazer cadastro.";
 });
